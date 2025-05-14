@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Game Theory Recruitment Test 2}
+\author{Mainak Sarkar}
+\date{May 16, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Lightsabers and Logic: The Final Permutation}
+
+\subsection{Problem Statement}
+Jedi Knight \textbf{Aria Solo} and Sith Lord \textbf{Darrus Vane} are locked in a final battle—not with lightsabers, but over a mysterious object known as the \textbf{Galactic Code Array}. This array is a scrambled, but unique sequence of numbers from 1 to $n$—neither sorted in increasing nor decreasing order, just a chaotic mess as if the galaxy itself conspired to challenge them.
+
+Each element in the array is initially \textbf{red}, meaning it’s locked in place. On their turn, a player may choose one of the following actions:
+\begin{itemize}
+  \item Turn one red element blue (i.e., unlock it).
+  \item Rearrange all the blue elements in any way they want (but red ones remain fixed).
+  \item Do nothing (pass the turn).
+\end{itemize}
+
+Players take turns, with \textbf{Aria (the Jedi) going first}. The game ends as soon as the array becomes sorted in a specific way:
+\begin{itemize}
+  \item If Aria arranges it into \texttt{[1, 2, 3, ..., n]} (i.e., in ascending order), she wins.
+  \item If Darrus makes it \texttt{[n, n-1, ..., 1]} (i.e., in descending order), he wins.
+  \item If neither player succeeds within a reasonable number of turns, the battle ends in a \textbf{Tie}.
+\end{itemize}
+
+\noindent
+\textbf{Hint:} Rearranging blue elements is only useful if it results in an immediate win, because the opponent can undo any arrangement on their next turn.
+
+\subsection{Your Mission}
+
+Given several starting configurations of the Galactic Code Array, your task is to predict the final outcome of the game—\texttt{First}, \texttt{Second}, or \texttt{Tie}—assuming both Jedi Aria and Sith Lord Darrus play as intelligently and strategically as possible.
+
+You may either:
+\begin{itemize}
+  \item Write a clear step-by-step explanation (an algorithm), \textbf{or}
+  \item Submit a well-commented implementation in \texttt{C}, \texttt{C++}, or \texttt{Python}.
+\end{itemize}
+
+In either case, please address the following:
+\begin{enumerate}
+  \item What is the \textbf{optimal strategy} for both players?  
+        \textit{(Optimal play means playing perfectly, making no mistakes.)}
+  \item Under what conditions does a player have a \textbf{winning strategy}?  
+        \textit{(A winning strategy guarantees a win, no matter what the opponent does.)}
+  \item Clearly explain that winning strategy.
+  \item Why can’t either player deviate from that strategy and expect to do better?  
+        \textit{(This refers to the idea of a \textbf{dominant strategy}, one that’s always best regardless of the opponent’s move.)}
+\end{enumerate}
+
+\noindent
+Your solution will be tested on multiple configurations. The input format is:
+
+\begin{itemize}
+  \item An integer \texttt{t} — the number of test cases.
+  \item For each test case:
+    \begin{itemize}
+      \item An integer \texttt{n} — the size of the array.
+      \item A permutation of numbers \texttt{1} to \texttt{n}, which is neither sorted in ascending nor descending order.
+    \end{itemize}
+\end{itemize}
+
+\noindent
+The output should be:
+\begin{itemize}
+  \item \texttt{"Win"} if Aria wins,
+  \item \texttt{"Lose"} if Darrus wins,
+  \item \texttt{"Tie"} if the game is drawn.
+\end{itemize}
+
+\subsection*{Example}
+
+\textbf{Input:}
+\begin{verbatim}
+2
+4
+3 1 4 2
+5
+2 5 1 4 3
+\end{verbatim}
+
+\textbf{Output:}
+\begin{verbatim}
+Win
+Tie
+\end{verbatim}
+
+\subsection{Grading Policy}
+
+The task will be graded out of 100 points. You may choose to write either a clear, step-by-step solution or submit a well-commented code implementation—there is \textbf{no need to do both}. If done both , the points will be calculated separately and marks will be awarded on the best solution.
+
+\begin{itemize}
+  \item If submitting code:
+    \begin{itemize}
+      \item Ensure it passes all test cases.
+      \item Include meaningful comments to explain your logic.
+      \item If your code doesn’t pass all cases, partial marks will be awarded based on number of test cases it passed and comments provided on the code
+    \end{itemize}
+  \item If writing a solution:
+    \begin{itemize}
+      \item Clearly outline both players’ strategies.
+      \item Explain winning conditions and when a forced tie occurs.
+      \item Even if your solution fails to cover all possible scenarios and is partially correct marks will be given upon your understanding of the question and the explanation provided/
+    \end{itemize}
+\end{itemize}
+
+\noindent
+In case multiple candidates score equally, preference will be given based on their stated project preferences.\\
+
+\noindent
+\textbf{May the force be with you.}
+\end{document}
