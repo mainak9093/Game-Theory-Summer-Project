@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Game Theory Recruitment Test}
+\author{Mainak Sarkar}
+\date{May 16, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Lightsabers and Logic: The Final Permutation}
+\subsection{\emph{Problem Statement}}
+The Jedi Knight Aria Solo and the Sith Lord Darrus Vane are locked in a final battle—not with lightsabers, but over a mysterious object known as the Galactic Code Array. The Galactic Code Array is a scrambled but unique sequence of numbers from 1 to n—neither sorted in increasing nor decreasing order, but rather a chaotic mess, as if the galaxy itself conspired to challenge them.  Each element in the array is initially red—that means it’s locked in place.\\ On their turn, each player can take one of the following actions:
+\begin{itemize}
+  \item Turn one red element to blue, unlocking it.
+  \item Rearrange the blue elements however they like, but the red ones stay in place.
+  \item Do nothing (pass the turn).
+\end{itemize}
+The players take turns, starting with Aria (the Jedi).
+\begin{itemize}
+  \item If Aria manages to make the entire array look like \([1, 2, 3, ..., n]\), i.e, in ascending order, she wins.
+  \item If Darrus makes it \([n, n-1, ..., 1]\), he wins i.e in decending order.
+  \item If neither of them succeeds within a reasonable number of moves, the battle ends in a Tie.
+\end{itemize}
+Hint: rearranging blue elements only makes sense if it leads to an immediate win, because the opponent can undo it on their next move.
+\subsection{Your Mission}
+Given several starting configurations of the Galactic Code Array, your job is to predict the final outcome of the game—First, Second, or Tie—assuming both Jedi Aria and Sith Lord Darrus play as intelligently and strategically as possible.\\
+You may either write a clear step-by-step explanation (an algorithm).
+\begin{enumerate}
+  \item Give the optimal strategy for both players.
+  \item Give the conditions when a player will have a winning strategy, i.e a concrete plan that a player can follow to guarantee a win, no matter how the opponent plays.
+  \item Explain the winning strategy.
+  \item Try to explain why can’t neither player can deviate from that plan and do better?
+\end{enumerate}
+Alternatively, you can write a well-commented C/C++/python code which takes input in the following format 
+\begin{itemize}
+  \item First, an integer t — the number of test cases and for each test case
+  \item An integer n — the size of the array.
+  \item A permutation of numbers 1 to n that is neither sorted in increasing nor decreasing order.
+\end{itemize}
+Output 'Win' if the Aria wins, 'Lose' if she loses, and 'Tie' if there is a forced tie.
+\subsection{Grading Policy}
+The task will be graded on 100 points. You may either write a well-commented code or well well-explained solution, there is no need to do both.\\
+If you are writing code, don't forget to comment it, as if your code fails to pass all the test cases, partial marks will be given based on the cases it has passed and the comments that will be written along with the code. Full marks will only be given if your code passes all the test cases.\\
+If you are writing a solution, clearly mention what the optimal strategy of both players is, when each player is bound to win, and when there is a forced tie. Even if your solution fails to cover all the possible scenarios, points will be awarded based on your understanding of the question. Also, there are marks on how well you are able to explain your solution, so keep that in mind while writing the solution.\\
+In case of a tie, preference will be given to those who have filled this project as their first preference and so on.\\
+May the force be with you.
+\end{document}
